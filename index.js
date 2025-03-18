@@ -9,7 +9,8 @@ const PORT = process.env.PORT || 5001;
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({    origin: "https://w-language.netlify.app",
+    credentials: true,}));
 app.use(cookieParser());
 
 app.get("/set-ad-cookie", (req, res) => {
